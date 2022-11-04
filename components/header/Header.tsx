@@ -1,5 +1,5 @@
 import { Group, Header as MantineHeader, Text, ThemeIcon } from '@mantine/core';
-import { IconMoon, IconSun } from '@tabler/icons';
+import { IconMoon, IconMoon2, IconSun } from '@tabler/icons';
 
 export const Header = () => (
   <MantineHeader height={60} p="md">
@@ -8,8 +8,8 @@ export const Header = () => (
         CSS sandbox
       </Text>
 
-      <ThemeIcon variant="outline" color="dark">
-        <IconMoon />
+      <ThemeIcon variant="default" color="dark">
+        <IconMoon strokeWidth={1} />
       </ThemeIcon>
     </Group>
   </MantineHeader>
