@@ -1,4 +1,5 @@
 import { AppShell, ColorSchemeProvider, MantineProvider } from '@mantine/core';
+import { Aside } from '../aside/Aside';
 import { Header } from '../header/Header';
 import { Nav } from '../nav/Nav';
 import { useThemeMutators, useThemeState } from '../state/theme-state';
@@ -17,7 +18,7 @@ export const App = () => {
         withNormalizeCSS
         theme={{ colorScheme }}
       >
-        <AppShell navbar={<Nav />} header={<Header />}>
+        <AppShell navbar={<Nav />} header={<Header />} aside={<Aside />}>
           hello world
         </AppShell>
       </MantineProvider>
