@@ -6,15 +6,7 @@ import { RecoilRoot } from 'recoil';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          colorScheme: 'light',
-        }}
-      >
-        <Component {...pageProps} />
-      </MantineProvider>
+      <Component {...pageProps} />
     </RecoilRoot>
   );
 }
