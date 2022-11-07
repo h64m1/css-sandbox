@@ -1,5 +1,5 @@
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
-import { IconMoon } from '@tabler/icons';
+import { IconMoon, IconSun } from '@tabler/icons';
 
 export const Icon = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -9,7 +9,11 @@ export const Icon = () => {
 
   return (
     <ActionIcon variant="default" color={colorScheme} onClick={handleClick}>
-      <IconMoon strokeWidth={1} />
+      {colorScheme === 'dark' ? (
+        <IconSun strokeWidth={1} />
+      ) : (
+        <IconMoon strokeWidth={1} />
+      )}
     </ActionIcon>
   );
 };
