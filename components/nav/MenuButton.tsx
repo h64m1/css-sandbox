@@ -13,6 +13,7 @@ export const MenuButton = (props: Props) => {
         display: 'block',
         width: '100%',
         padding: theme.spacing.xs,
+        borderRadius: theme.radius.md,
 
         '&:hover': {
           backgroundColor:
