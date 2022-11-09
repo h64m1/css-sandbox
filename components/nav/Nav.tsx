@@ -22,9 +22,10 @@ export const Nav = () => {
 
   return (
     <Navbar
-      width={{ base: opened ? 70 : 300 }}
+      width={{ base: opened ? 67 : 300 }}
       height={'100%'}
       p="xs"
+      hidden
       hiddenBreakpoint="sm"
     >
       {menus}

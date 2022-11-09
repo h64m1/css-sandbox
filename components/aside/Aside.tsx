@@ -6,7 +6,7 @@ export const Aside = () => {
   return (
     <MantineAside
       hidden
-      hiddenBreakpoint="sm"
+      hiddenBreakpoint="md"
       width={{ sm: 200, lg: 300 }}
       p="md"
     >
