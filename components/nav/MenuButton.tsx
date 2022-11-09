@@ -4,6 +4,7 @@ interface Props {
   icon: React.ReactNode;
   label: string;
   color: string;
+  opened: boolean;
 }
 
 export const MenuButton = (props: Props) => {
@@ -28,7 +29,7 @@ export const MenuButton = (props: Props) => {
           {props.icon}
         </ThemeIcon>
 
-        <Text size="sm">{props.label}</Text>
+        {!props.opened && <Text size="sm">{props.label}</Text>}
       </Group>
     </UnstyledButton>
   );
