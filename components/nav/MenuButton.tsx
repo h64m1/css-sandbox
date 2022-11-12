@@ -5,6 +5,7 @@ interface Props {
   label: string;
   color: string;
   opened: boolean;
+  onClick: () => void;
 }
 
 export const MenuButton = (props: Props) => {
@@ -23,6 +24,7 @@ export const MenuButton = (props: Props) => {
               : theme.colors.gray[0],
         },
       })}
+      onClick={props.onClick}
     >
       <Group>
         <ThemeIcon color={props.color} variant="light">
