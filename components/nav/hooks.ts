@@ -7,7 +7,7 @@ export const usePageUrl = () => {
   const router = useRouter();
 
   const pushRoute = useCallback(
-    (pagePath: PagePathType) => {
+    (pagePath?: PagePathType) => {
       const url = getPagePath(pagePath);
 
       router.push(url);
@@ -20,9 +20,12 @@ export const usePageUrl = () => {
   };
 };
 
-const getPagePath = (pagePath: PagePathType) => {
+const getPagePath = (pagePath: PagePathType | undefined) => {
   switch (pagePath) {
     case PagePath.margin:
       return pagesPath.styles.margin_padding.$url();
+
+    default:
+      return pagesPath.$url();
   }
 };

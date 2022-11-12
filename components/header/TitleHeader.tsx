@@ -1,16 +1,25 @@
-import { Burger, Group, Text } from '@mantine/core';
-import { useNavMutators } from 'components/state/nav-state';
+import { ActionIcon, Group, Text, UnstyledButton } from '@mantine/core';
+import { IconSquareLetterC } from '@tabler/icons';
+import { usePageUrl } from 'components/nav/hooks';
 
 export const TitleHeader = () => {
-  const { toggleNavMenu } = useNavMutators();
+  const { pushRoute } = usePageUrl();
+
+  const handleClick = () => {
+    pushRoute();
+  };
 
   return (
-    <Group>
-      <Burger opened={false} size="sm" onClick={toggleNavMenu} />
+    <UnstyledButton onClick={handleClick}>
+      <Group>
+        <ActionIcon variant="default">
+          <IconSquareLetterC />
+        </ActionIcon>
 
-      <Text size="xl" weight={700}>
-        CSS sandbox
-      </Text>
-    </Group>
+        <Text size="xl" weight={700}>
+          CSS sandbox
+        </Text>
+      </Group>
+    </UnstyledButton>
   );
 };

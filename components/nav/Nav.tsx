@@ -1,6 +1,5 @@
 import { Navbar } from '@mantine/core';
 import { IconSquareLetterM } from '@tabler/icons';
-import { useNavState } from 'components/state/nav-state';
 import { usePageUrl } from 'components/nav/hooks';
 import { MenuButton } from 'components/nav/MenuButton';
 import { PagePath } from 'components/nav/type';
@@ -15,22 +14,17 @@ const data = [
 ];
 
 export const Nav = () => {
-  const { opened } = useNavState();
   const { pushRoute } = usePageUrl();
 
   const menus = data.map((menu) => (
     <Navbar.Section key={menu.label}>
-      <MenuButton
-        {...menu}
-        opened={opened}
-        onClick={() => pushRoute(menu.pagePath)}
-      />
+      <MenuButton {...menu} onClick={() => pushRoute(menu.pagePath)} />
     </Navbar.Section>
   ));
 
   return (
     <Navbar
-      width={{ base: opened ? 67 : 300 }}
+      width={{ base: 300 }}
       height={'100%'}
       p="xs"
       hidden
