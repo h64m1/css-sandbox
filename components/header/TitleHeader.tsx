@@ -1,7 +1,5 @@
 import { Burger, Group, Text } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { Icon123 } from '@tabler/icons';
-import { useNavMutators, useNavState } from '../state/nav-state';
+import { useNavMutators } from 'components/state/nav-state';
 
 export const TitleHeader = () => {
   const { toggleNavMenu } = useNavMutators();

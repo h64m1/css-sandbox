@@ -1,6 +1,6 @@
-import { Burger, Group, Header as MantineHeader, Text } from '@mantine/core';
-import { Icon } from './theme/Icon';
-import { TitleHeader } from './TitleHeader';
+import { Group, Header as MantineHeader } from '@mantine/core';
+import { Icon } from 'components/header/theme/Icon';
+import { TitleHeader } from 'components/header/TitleHeader';
 
 export const Header = () => (
   <MantineHeader height={60} p="md">
