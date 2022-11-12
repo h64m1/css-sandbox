@@ -1,10 +1,11 @@
 import { AppShell, ColorSchemeProvider, MantineProvider } from '@mantine/core';
-import { Aside } from '../aside/Aside';
-import { Header } from '../header/Header';
-import { Nav } from '../nav/Nav';
-import { useThemeMutators, useThemeState } from '../state/theme-state';
+import { Aside } from 'components/aside/Aside';
+import { Header } from 'components/header/Header';
+import { Nav } from 'components/nav/Nav';
+import { useThemeMutators, useThemeState } from 'components/state/theme-state';
+import { PropsWithChildren } from 'react';
 
-export const App = () => {
+export const MainProvider = (props: PropsWithChildren) => {
   const { colorScheme } = useThemeState();
   const { toggleColorScheme } = useThemeMutators();
 
@@ -19,7 +20,7 @@ export const App = () => {
         theme={{ colorScheme }}
       >
         <AppShell navbar={<Nav />} header={<Header />} aside={<Aside />}>
-          hello world
+          {props.children}
         </AppShell>
       </MantineProvider>
     </ColorSchemeProvider>

@@ -1,12 +1,13 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { MantineProvider } from '@mantine/core';
 import { RecoilRoot } from 'recoil';
+import { MainProvider } from 'components/provider/MainProvider';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <Component {...pageProps} />
+      <MainProvider>
+        <Component {...pageProps} />
+      </MainProvider>
     </RecoilRoot>
   );
 }
