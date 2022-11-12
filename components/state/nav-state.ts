@@ -1,6 +1,3 @@
-import { ColorScheme } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { useCallback } from 'react';
 import { atom, useRecoilValue, useSetRecoilState } from 'recoil';
 
 type NavState = {
