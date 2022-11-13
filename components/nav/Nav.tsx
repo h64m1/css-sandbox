@@ -24,7 +24,7 @@ export const Nav = () => {
 
   return (
     <Navbar
-      width={{ base: 300 }}
+      width={{ sm: 300 }}
       height={'100%'}
       p="xs"
       hidden
