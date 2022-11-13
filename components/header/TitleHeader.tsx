@@ -1,4 +1,4 @@
-import { ActionIcon, Group, Text, UnstyledButton } from '@mantine/core';
+import { Group, Text, ThemeIcon, UnstyledButton } from '@mantine/core';
 import { IconSquareLetterC } from '@tabler/icons';
 import { usePageUrl } from 'components/nav/hooks';
 
@@ -12,9 +12,9 @@ export const TitleHeader = () => {
   return (
     <UnstyledButton onClick={handleClick}>
       <Group>
-        <ActionIcon variant="default">
+        <ThemeIcon variant="default">
           <IconSquareLetterC />
-        </ActionIcon>
+        </ThemeIcon>
 
         <Text size="xl" weight={700}>
           CSS sandbox
