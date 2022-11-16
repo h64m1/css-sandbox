@@ -1,7 +1,5 @@
 import { Aside as MantineAside } from '@mantine/core';
-import { WidthSlider } from 'components/aside/WidthSlider';
-
-const Section = MantineAside.Section;
+import { Slider } from 'components/aside/Slider';
 
 export const Aside = () => {
   return (
@@ -11,7 +9,14 @@ export const Aside = () => {
       width={{ sm: 200, lg: 300 }}
       p="md"
     >
-      <WidthSlider />
+      <Slider
+        title="Width"
+        marks={[
+          { value: 20, label: '30%' },
+          { value: 50, label: '50%' },
+          { value: 80, label: '80%' },
+        ]}
+      />
     </MantineAside>
   );
 };
