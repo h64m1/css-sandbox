@@ -1,4 +1,4 @@
-import { useMantineTheme } from '@mantine/styles';
+import { useMantineTheme, useMantineColorScheme } from '@mantine/styles';
 import { StyledBox } from 'components/parts/StyledBox';
 import { useSizeState } from 'components/state/size-state';
 import { forwardRef, useRef } from 'react';
@@ -14,6 +14,7 @@ export const MarginPadding = () => {
 
   const { width } = useSizeState();
   const { colors } = useMantineTheme();
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <Margin
@@ -30,7 +31,9 @@ export const MarginPadding = () => {
         <Base
           height={height - margin - padding}
           width={width - margin - padding}
-          backgroundColor={colors.gray[0]}
+          backgroundColor={
+            colorScheme === 'dark' ? colors.dark[6] : colors.gray[0]
+          }
         >
           margin padding
         </Base>
