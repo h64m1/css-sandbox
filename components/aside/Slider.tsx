@@ -17,8 +17,6 @@ interface Props {
 }
 
 export const Slider = (props: Props) => {
-  const scale: number = props.labelScale ?? 1.0;
-
   return (
     <>
       <Text>{props.title}</Text>
