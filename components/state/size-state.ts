@@ -3,11 +3,12 @@ import { atom, useRecoilValue, useSetRecoilState } from 'recoil';
 
 type SizeState = {
   width: number;
+  height: number;
 };
 
 const sizeState = atom<SizeState>({
   key: 'sizeState',
-  default: { width: Size.width.max },
+  default: { width: Size.width.max, height: Size.height.max },
 });
 
 export const useSizeState = () => {
@@ -15,12 +16,22 @@ export const useSizeState = () => {
 };
 
 export const useSizeMutators = () => {
+  const size = useSizeState();
   const setState = useSetRecoilState(sizeState);
 
   const changeWidth = (value?: number) => {
     setState({
-      width: value || 0,
+      width: value || size.width,
+      height: size.height,
     });
   };
-  return { changeWidth };
+
+  const changeHeight = (value?: number) => {
+    setState({
+      width: size.width,
+      height: value || size.height,
+    });
+  };
+
+  return { changeWidth, changeHeight };
 };

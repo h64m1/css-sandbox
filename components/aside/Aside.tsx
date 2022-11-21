@@ -1,10 +1,8 @@
-import { Aside as MantineAside } from '@mantine/core';
-import { getMarks } from 'components/aside/Mark';
+import { Aside as MantineAside, Space } from '@mantine/core';
+import { Height } from 'components/aside/Height';
 import { Width } from 'components/aside/Width';
 
 export const Aside = () => {
-  const marks = getMarks();
-
   return (
     <MantineAside
       hidden
@@ -12,7 +10,11 @@ export const Aside = () => {
       width={{ sm: 200, lg: 300 }}
       p="md"
     >
-      <Width marks={marks} />
+      <Width />
+
+      <Space h="xl" />
+
+      <Height />
     </MantineAside>
   );
 };

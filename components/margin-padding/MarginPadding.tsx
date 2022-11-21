@@ -8,11 +8,10 @@ export const MarginPadding = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   // TODO: stateを作る
-  const height = 100;
   const margin = 10;
   const padding = 20;
 
-  const { width } = useSizeState();
+  const { width, height } = useSizeState();
   const { colors } = useMantineTheme();
   const { colorScheme } = useMantineColorScheme();
 

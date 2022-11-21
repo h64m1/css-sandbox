@@ -1,15 +1,13 @@
 import { Slider } from 'components/aside/Slider';
 import { useSizeMutators, useSizeState } from 'components/state/size-state';
 import { Size } from 'components/const/size';
-import { Mark } from 'components/aside/Mark';
+import { getMarks } from 'components/aside/Mark';
 
-interface Props {
-  marks: Mark[];
-}
-
-export const Width = (props: Props) => {
+export const Width = () => {
   const { width } = useSizeState();
   const { changeWidth } = useSizeMutators();
+
+  const marks = getMarks(Size.width.scale);
 
   return (
     <Slider
@@ -19,7 +17,7 @@ export const Width = (props: Props) => {
       min={Size.width.min}
       max={Size.width.max}
       labelScale={Size.width.scale}
-      marks={props.marks}
+      marks={marks}
       onChange={changeWidth}
     />
   );
