@@ -21,7 +21,7 @@ export const useSizeMutators = () => {
 
   const changeWidth = (value?: number) => {
     setState({
-      width: value || size.width,
+      width: value ?? size.width,
       height: size.height,
     });
   };
@@ -29,7 +29,7 @@ export const useSizeMutators = () => {
   const changeHeight = (value?: number) => {
     setState({
       width: size.width,
-      height: value || size.height,
+      height: value ?? size.height,
     });
   };
 
