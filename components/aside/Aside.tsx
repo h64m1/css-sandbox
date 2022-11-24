@@ -1,5 +1,5 @@
 import { Aside as MantineAside, Space } from '@mantine/core';
-import { MarginSlider } from 'components/aside/MarginSlider';
+import { MarginSlider } from 'components/aside/margin/MarginSlider';
 import { Select } from 'components/parts/Select';
 
 export const Aside = () => {
