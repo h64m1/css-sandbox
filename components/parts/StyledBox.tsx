@@ -7,11 +7,15 @@ const defaultProps = {
 };
 
 interface Props {
+  height: number;
+  width: number;
   backgroundColor?: string;
   border?: string;
   borderRadius?: number; // px
-  height: number;
-  width: number;
+  marginTop?: number; // px
+  marginBottom?: number; // px
+  marginLeft?: number; // px
+  marginRight?: number; // px
 }
 
 export const StyledBox = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
@@ -20,12 +24,15 @@ export const StyledBox = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
       <Box
         ref={ref}
         sx={(theme) => ({
-          // TODO: backgroundColorもpropsにする
           backgroundColor: props.backgroundColor ?? theme.colors.blue[2],
           borderRadius: props.borderRadius ?? defaultProps.borderRadius,
           border: props.border,
           height: props.height,
           width: props.width,
+          marginTop: props.marginTop ?? 0,
+          marginBottom: props.marginBottom ?? 0,
+          marginLeft: props.marginLeft ?? 0,
+          marginRight: props.marginRight ?? 0,
         })}
       >
         {props.children}
