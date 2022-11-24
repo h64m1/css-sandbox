@@ -1,8 +1,8 @@
-import { useMantineTheme, useMantineColorScheme } from '@mantine/styles';
+import { useMantineColorScheme, useMantineTheme } from '@mantine/styles';
+import { Size } from 'components/const/size';
 import { StyledBox } from 'components/parts/StyledBox';
-import { useSizeState } from 'components/state/size-state';
-import { forwardRef, useRef } from 'react';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useRef } from 'react';
+import { Margin } from 'components/margin-padding/Margin';
 
 export const MarginPadding = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -11,7 +11,8 @@ export const MarginPadding = () => {
   const margin = 10;
   const padding = 20;
 
-  const { width, height } = useSizeState();
+  const width = Size.width.max;
+  const height = Size.height.max;
   const { colors } = useMantineTheme();
   const { colorScheme } = useMantineColorScheme();
 
@@ -46,23 +47,6 @@ interface Props {
   width: number;
   backgroundColor: string;
 }
-
-const Margin = forwardRef<HTMLDivElement, PropsWithChildren<Props>>(
-  (props: PropsWithChildren<Props>, ref) => {
-    return (
-      <StyledBox
-        height={props.height}
-        width={props.width}
-        backgroundColor={props.backgroundColor}
-        ref={ref}
-      >
-        {props.children}
-      </StyledBox>
-    );
-  },
-);
-
-Margin.displayName = 'Margin';
 
 const Padding = (props: PropsWithChildren<Props>) => {
   return (

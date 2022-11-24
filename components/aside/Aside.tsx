@@ -1,6 +1,6 @@
 import { Aside as MantineAside, Space } from '@mantine/core';
-import { Height } from 'components/aside/Height';
-import { Width } from 'components/aside/Width';
+import { MarginSlider } from 'components/aside/MarginSlider';
+import { Select } from 'components/parts/Select';
 
 export const Aside = () => {
   return (
@@ -10,11 +10,11 @@ export const Aside = () => {
       width={{ sm: 200, lg: 300 }}
       p="md"
     >
-      <Width />
+      <Select label="Margin type" data={[{ value: 'test1', label: 'tblr' }]} />
 
       <Space h="xl" />
 
-      <Height />
+      <MarginSlider />
     </MantineAside>
   );
 };
