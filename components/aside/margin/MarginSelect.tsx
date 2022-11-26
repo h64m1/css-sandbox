@@ -1,17 +1,28 @@
+import { getMarginType, MarginType } from 'components/const/marginType';
 import { Select } from 'components/parts/Select';
 import { useState } from 'react';
 
-type MarginType = 'all' | 'tb_lr' | 't_lr_b' | 't_r_b_l';
-
 const data = [
-  { value: 'all', label: 'all' },
-  { value: 'tb_lr', label: 'vertical | horizontal' },
-  { value: 't_lr_b', label: 'top | horizontal | bottom' },
-  { value: 't_r_b_l', label: 'top | right | bottom | left' },
+  { value: MarginType.all, label: 'all' },
+  { value: MarginType.tb_lr, label: 'vertical | horizontal' },
+  { value: MarginType.t_lr_b, label: 'top | horizontal | bottom' },
+  { value: MarginType.t_r_b_l, label: 'top | right | bottom | left' },
 ];
 
 export const MarginSelect = () => {
-  const [marginType, setMarginType] = useState<MarginType>('all');
+  const [marginType, setMarginType] = useState<MarginType>(MarginType.all);
 
-  return <Select label="Margin type" data={data} />;
+  const handleChange = (value: string) => {
+    const type = getMarginType(value);
+    setMarginType(type);
+  };
+
+  return (
+    <Select
+      defaultValue={marginType}
+      label="Margin type"
+      data={data}
+      onChange={handleChange}
+    />
+  );
 };
