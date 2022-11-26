@@ -1,5 +1,5 @@
 import { StyledBox } from 'components/parts/StyledBox';
-import { useMarginState } from 'components/state/margin-state';
+import { useMarginState } from 'components/aside/margin/state/margin-state';
 import { forwardRef, PropsWithChildren } from 'react';
 
 interface Props {

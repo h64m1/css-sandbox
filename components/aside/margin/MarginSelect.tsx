@@ -1,6 +1,9 @@
-import { getMarginType, MarginType } from 'components/const/marginType';
+import { MarginType } from 'components/const/marginType';
 import { Select } from 'components/parts/Select';
-import { useState } from 'react';
+import {
+  useMarginTypeMutators,
+  useMarginTypeState,
+} from 'components/aside/margin/state/margin-type-state';
 
 const data = [
   { value: MarginType.all, label: 'all' },
@@ -10,19 +13,15 @@ const data = [
 ];
 
 export const MarginSelect = () => {
-  const [marginType, setMarginType] = useState<MarginType>(MarginType.all);
-
-  const handleChange = (value: string) => {
-    const type = getMarginType(value);
-    setMarginType(type);
-  };
+  const { marginType } = useMarginTypeState();
+  const { changeMarginType } = useMarginTypeMutators();
 
   return (
     <Select
       defaultValue={marginType}
       label="Margin type"
       data={data}
-      onChange={handleChange}
+      onChange={changeMarginType}
     />
   );
 };

@@ -7,7 +7,7 @@ export const MarginType = {
 
 export type MarginType = typeof MarginType[keyof typeof MarginType];
 
-export const getMarginType = (value: string) => {
+export const getMarginType = (value?: string) => {
   switch (value) {
     case MarginType.all:
       return MarginType.all;

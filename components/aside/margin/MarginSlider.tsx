@@ -4,7 +4,7 @@ import { getMarks } from 'components/aside/Mark';
 import {
   useMarginMutators,
   useMarginState,
-} from 'components/state/margin-state';
+} from 'components/aside/margin/state/margin-state';
 
 export const MarginSlider = () => {
   const margin = useMarginState();
