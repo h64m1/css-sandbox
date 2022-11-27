@@ -17,17 +17,44 @@ export const useMarginState = () => {
 };
 
 export const useMarginMutators = () => {
-  const margin = useMarginState();
+  const state = useMarginState();
   const setState = useSetRecoilState(marginState);
 
-  const changeMarginAll = (value?: number) => {
-    setState({
-      top: value ?? margin.top,
-      bottom: value ?? margin.bottom,
-      left: value ?? margin.left,
-      right: value ?? margin.right,
-    });
+  const changeMarginAll = (value: number) => {
+    setState({ top: value, bottom: value, left: value, right: value });
   };
 
-  return { changeMarginAll };
+  const changeMarginVertical = (vertical: number) => {
+    setState({ ...state, top: vertical, bottom: vertical });
+  };
+
+  const changeMarginHorizontal = (horizontal: number) => {
+    setState({ ...state, left: horizontal, right: horizontal });
+  };
+
+  const changeMarginTop = (top: number) => {
+    setState({ ...state, top });
+  };
+
+  const changeMarginBottom = (bottom: number) => {
+    setState({ ...state, bottom });
+  };
+
+  const changeMarginLeft = (left: number) => {
+    setState({ ...state, left });
+  };
+
+  const changeMarginRight = (right: number) => {
+    setState({ ...state, right });
+  };
+
+  return {
+    changeMarginAll,
+    changeMarginVertical,
+    changeMarginHorizontal,
+    changeMarginTop,
+    changeMarginBottom,
+    changeMarginLeft,
+    changeMarginRight,
+  };
 };

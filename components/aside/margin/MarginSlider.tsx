@@ -1,27 +1,26 @@
-import { Slider } from 'components/parts/Slider';
-import { Size } from 'components/const/size';
 import { getMarks } from 'components/aside/Mark';
-import {
-  useMarginMutators,
-  useMarginState,
-} from 'components/aside/margin/state/margin-state';
+import { Margin } from 'components/const/margin';
+import { Slider } from 'components/parts/Slider';
 
-export const MarginSlider = () => {
-  const margin = useMarginState();
-  const { changeMarginAll } = useMarginMutators();
+interface Props {
+  title: string;
+  margin: number;
+  onChange: (value: number) => void;
+}
 
-  const marks = getMarks(Size.width.scale);
+export const MarginSlider = (props: Props) => {
+  const marks = getMarks(Margin.scale);
 
   return (
     <Slider
-      title="Margin"
-      value={0}
-      step={Size.width.step}
-      min={Size.width.min}
-      max={Size.width.max}
-      labelScale={Size.width.scale}
+      title={props.title}
+      value={props.margin}
+      step={Margin.step}
+      min={Margin.min}
+      max={Margin.max}
+      labelScale={Margin.scale}
       marks={marks}
-      onChange={() => {}}
+      onChange={props.onChange}
     />
   );
 };

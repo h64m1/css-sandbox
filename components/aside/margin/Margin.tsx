@@ -1,6 +1,6 @@
 import { Space } from '@mantine/core';
 import { MarginSelect } from 'components/aside/margin/MarginSelect';
-import { MarginSlider } from 'components/aside/margin/MarginSlider';
+import { MarginSliders } from 'components/aside/margin/MarginSliders';
 
 export const Margin = () => {
   return (
@@ -9,7 +9,7 @@ export const Margin = () => {
 
       <Space h="xl" />
 
-      <MarginSlider />
+      <MarginSliders />
     </>
   );
 };
