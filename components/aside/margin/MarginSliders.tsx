@@ -18,16 +18,11 @@ export const MarginSliders = () => {
         const onChange = onChanges[index];
 
         return (
-          <>
+          <div key={index}>
             {index !== 0 && <Space h="lg" />}
 
-            <MarginSlider
-              key={index}
-              title={title}
-              margin={margin}
-              onChange={onChange}
-            />
-          </>
+            <MarginSlider title={title} margin={margin} onChange={onChange} />
+          </div>
         );
       })}
     </>
