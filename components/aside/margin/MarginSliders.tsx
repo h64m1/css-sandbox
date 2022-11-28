@@ -1,77 +1,60 @@
+import { Space } from '@mantine/core';
+import { MarginAllSlider } from 'components/aside/margin/MarginAllSlider';
+import {
+  MarginBottomSlider,
+  MarginHorizontalSlider,
+  MarginLeftSlider,
+  MarginRightSlider,
+  MarginTopSlider,
+  MarginVerticalSlider,
+} from 'components/aside/margin/MarginEachSlider';
 import { useMarginTypeState } from 'components/aside/margin/state/margin-type-state';
 import { MarginType } from 'components/const/marginType';
-import {
-  useMarginMutators,
-  useMarginState,
-} from 'components/aside/margin/state/margin-state';
-import { MarginSlider } from 'components/aside/margin/MarginSlider';
-import { Space } from '@mantine/core';
 
 export const MarginSliders = () => {
   const { marginType } = useMarginTypeState();
-  const { titles, margins, onChanges } = useMarginProps(marginType);
 
   return (
     <>
-      {margins.map((margin, index) => {
-        const title = titles[index];
-        const onChange = onChanges[index];
+      {marginType === MarginType.all ? (
+        <MarginAllSlider />
+      ) : marginType === MarginType.tb_lr ? (
+        <>
+          <MarginVerticalSlider />
 
-        return (
-          <div key={index}>
-            {index !== 0 && <Space h="lg" />}
+          <Space h="lg" />
 
-            <MarginSlider title={title} margin={margin} onChange={onChange} />
-          </div>
-        );
-      })}
+          <MarginHorizontalSlider />
+        </>
+      ) : marginType === MarginType.t_lr_b ? (
+        <>
+          <MarginTopSlider />
+
+          <Space h="lg" />
+
+          <MarginHorizontalSlider />
+
+          <Space h="lg" />
+
+          <MarginBottomSlider />
+        </>
+      ) : marginType === MarginType.t_r_b_l ? (
+        <>
+          <MarginTopSlider />
+
+          <Space h="lg" />
+
+          <MarginRightSlider />
+
+          <Space h="lg" />
+
+          <MarginBottomSlider />
+
+          <Space h="lg" />
+
+          <MarginLeftSlider />
+        </>
+      ) : null}
     </>
   );
-};
-
-const useMarginProps = (marginType: MarginType) => {
-  const state = useMarginState();
-  const mutators = useMarginMutators();
-
-  switch (marginType) {
-    case MarginType.all:
-      return {
-        titles: ['all'],
-        margins: [state.top],
-        onChanges: [mutators.changeMarginAll],
-      };
-
-    case MarginType.tb_lr:
-      return {
-        titles: ['vertical', 'horizontal'],
-        margins: [state.top, state.left],
-        onChanges: [
-          mutators.changeMarginHorizontal,
-          mutators.changeMarginVertical,
-        ],
-      };
-
-    case MarginType.t_lr_b:
-      return {
-        titles: ['top', 'horizontal', 'bottom'],
-        margins: [state.top, state.left, state.bottom],
-        onChanges: [
-          mutators.changeMarginTop,
-          mutators.changeMarginHorizontal,
-          mutators.changeMarginBottom,
-        ],
-      };
-
-    case MarginType.t_r_b_l:
-      return {
-        titles: ['top', 'right', 'bottom', 'left'],
-        margins: [state.top, state.right, state.bottom, state.left],
-        onChanges: [
-          mutators.changeMarginTop,
-          mutators.changeMarginRight,
-          mutators.changeMarginBottom,
-          mutators.changeMarginLeft,
-        ],
-      };
-  }
 };
