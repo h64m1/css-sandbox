@@ -9,7 +9,7 @@ const data = [
   {
     icon: <IconSquareLetterM size={16} />,
     color: 'blue',
-    label: 'Margin & Padding',
+    label: 'Margin',
     pagePath: PagePath.margin,
   },
 ];

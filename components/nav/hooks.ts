@@ -23,7 +23,7 @@ export const usePageUrl = () => {
 const getPagePath = (pagePath: PagePathType | undefined) => {
   switch (pagePath) {
     case PagePath.margin:
-      return pagesPath.styles.margin_padding.$url();
+      return pagesPath.styles.margin.$url();
 
     default:
       return pagesPath.$url();

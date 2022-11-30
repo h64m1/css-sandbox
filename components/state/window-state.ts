@@ -21,8 +21,9 @@ export const useWindowMutators = () => {
 
   const changeWidth = useCallback(
     (width: { main: number; nav: number; aside: number }) => {
+      const factor = 1.2;
       setState({
-        width: width.main - width.nav - width.aside,
+        width: Math.trunc(width.main - (width.nav + width.aside) * factor),
         height: state.height,
       });
     },
