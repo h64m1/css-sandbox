@@ -7,8 +7,8 @@ const defaultProps = {
 };
 
 interface Props {
-  height: number;
-  width: number;
+  height: number | string;
+  width: number | string;
   backgroundColor?: string;
   border?: string;
   borderRadius?: number; // px
