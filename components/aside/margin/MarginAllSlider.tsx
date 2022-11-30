@@ -2,7 +2,7 @@ import { MarginSlider } from 'components/aside/margin/MarginSlider';
 import {
   marginSelectors,
   useSetMarginAll,
-} from 'components/aside/margin/state/margin-state';
+} from 'components/state/margin-state';
 
 export const MarginAllSlider = () => {
   const { useAll } = marginSelectors;

@@ -7,7 +7,7 @@ import {
   useSetMarginRight,
   useSetMarginTop,
   useSetMarginVertical,
-} from 'components/aside/margin/state/margin-state';
+} from 'components/state/margin-state';
 
 export const MarginTopSlider = () => {
   const { useTop } = marginSelectors;
