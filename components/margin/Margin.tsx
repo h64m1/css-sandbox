@@ -1,19 +1,59 @@
-import { useMantineColorScheme, useMantineTheme } from '@mantine/styles';
+import { useMantineTheme } from '@mantine/styles';
 import { createStyles } from '@mantine/styles';
-import { Container } from '@mantine/core';
+import { ColorSwatch, Container, Group } from '@mantine/core';
+import { useMarginState } from 'components/state/margin-state';
 
 const useStyles = createStyles((theme) => ({
   container: {
     height: '100%',
-    backgroundColor: theme.colors.blue[1],
+    margin: 0,
+    padding: 0,
+    border: `1px solid ${
+      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[4]
+    }`,
   },
 }));
 
+const numberOfBox = Array.from({ length: 4 }).map((_, i) => i);
+
 export const Margin = () => {
   const { colors } = useMantineTheme();
-  const { colorScheme } = useMantineColorScheme();
-
   const { classes } = useStyles();
 
-  return <Container className={classes.container}></Container>;
+  const margin = useMarginState();
+
+  const swatches = Object.keys(colors).flatMap((color) => {
+    if (color !== 'dark') return [];
+
+    return numberOfBox.map((i) => (
+      <ColorSwatch
+        key={color}
+        color={colors[color][i]}
+        size={100}
+        radius={0}
+        sx={{
+          marginTop: margin.top,
+          marginBottom: margin.bottom,
+          marginLeft: margin.left,
+          marginRight: margin.right,
+          color: colors.gray[0],
+          transition: 'all .3s ease-out',
+        }}
+      >
+        {colors[color][i]}
+      </ColorSwatch>
+    ));
+  });
+
+  return (
+    <Container className={classes.container}>
+      <Group noWrap spacing={0}>
+        {swatches}
+      </Group>
+
+      <Group noWrap spacing={0}>
+        {swatches}
+      </Group>
+    </Container>
+  );
 };
