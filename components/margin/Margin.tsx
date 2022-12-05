@@ -22,37 +22,38 @@ export const Margin = () => {
 
   const margin = useMarginState();
 
-  const swatches = Object.keys(colors).flatMap((color) => {
-    if (color !== 'dark') return [];
+  const swatches = (offset: number) =>
+    Object.keys(colors).flatMap((color) => {
+      if (color !== 'dark') return [];
 
-    return numberOfBox.map((i) => (
-      <ColorSwatch
-        key={color}
-        color={colors[color][i]}
-        size={100}
-        radius={0}
-        sx={{
-          marginTop: margin.top,
-          marginBottom: margin.bottom,
-          marginLeft: margin.left,
-          marginRight: margin.right,
-          color: colors.gray[0],
-          transition: 'all .3s ease-out',
-        }}
-      >
-        {colors[color][i]}
-      </ColorSwatch>
-    ));
-  });
+      return numberOfBox.map((i) => (
+        <ColorSwatch
+          key={`${color}_${i + offset}`}
+          color={colors[color][i]}
+          size={100}
+          radius={0}
+          sx={{
+            marginTop: margin.top,
+            marginBottom: margin.bottom,
+            marginLeft: margin.left,
+            marginRight: margin.right,
+            color: colors.gray[0],
+            transition: 'all .3s ease-out',
+          }}
+        >
+          {colors[color][i]}
+        </ColorSwatch>
+      ));
+    });
 
   return (
     <Container className={classes.container}>
       <Group noWrap spacing={0}>
-        {swatches}
+        {swatches(0)}
       </Group>
 
       <Group noWrap spacing={0}>
-        {swatches}
+        {swatches(4)}
       </Group>
     </Container>
   );
