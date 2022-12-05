@@ -1,5 +1,5 @@
 import { Aside as MantineAside } from '@mantine/core';
-import { Margin } from 'components/aside/margin/Margin';
+import { MarginAside } from 'components/aside/margin/MarginAside';
 import { forwardRef } from 'react';
 
 export const Aside = forwardRef<HTMLElement>((_, ref) => {
@@ -11,7 +11,7 @@ export const Aside = forwardRef<HTMLElement>((_, ref) => {
       p="md"
       ref={ref}
     >
-      <Margin />
+      <MarginAside />
     </MantineAside>
   );
 });
