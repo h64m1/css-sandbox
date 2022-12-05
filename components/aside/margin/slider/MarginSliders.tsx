@@ -1,5 +1,5 @@
 import { Space } from '@mantine/core';
-import { MarginAllSlider } from 'components/aside/margin/MarginAllSlider';
+import { MarginAllSlider } from 'components/aside/margin/slider/MarginAllSlider';
 import {
   MarginBottomSlider,
   MarginHorizontalSlider,
@@ -7,7 +7,7 @@ import {
   MarginRightSlider,
   MarginTopSlider,
   MarginVerticalSlider,
-} from 'components/aside/margin/MarginEachSlider';
+} from 'components/aside/margin/slider/MarginEachSlider';
 import { useMarginTypeState } from 'components/aside/margin/state/margin-type-state';
 import { MarginType } from 'components/aside/margin/state/marginType';
 

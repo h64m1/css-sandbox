@@ -1,4 +1,4 @@
-import { MarginSlider } from 'components/aside/margin/MarginSlider';
+import { MarginSlider } from 'components/aside/margin/slider/MarginSlider';
 import {
   marginSelectors,
   useSetMarginAll,

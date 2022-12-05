@@ -1,6 +1,6 @@
 import { Space } from '@mantine/core';
-import { MarginSelect } from 'components/aside/margin/MarginSelect';
-import { MarginSliders } from 'components/aside/margin/MarginSliders';
+import { MarginSelect } from 'components/aside/margin/select/MarginSelect';
+import { MarginSliders } from 'components/aside/margin/slider/MarginSliders';
 
 export const MarginAside = () => {
   return (
