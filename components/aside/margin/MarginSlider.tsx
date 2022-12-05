@@ -1,5 +1,5 @@
+import { MARGIN } from 'components/aside/margin/margin-const';
 import { getMarks } from 'components/aside/Mark';
-import { Margin } from 'components/aside/margin/margin';
 import { Slider } from 'components/parts/Slider';
 
 interface Props {
@@ -9,16 +9,16 @@ interface Props {
 }
 
 export const MarginSlider = (props: Props) => {
-  const marks = getMarks(Margin.scale);
+  const marks = getMarks(MARGIN.scale);
 
   return (
     <Slider
       title={props.title}
       value={props.margin}
-      step={Margin.step}
-      min={Margin.min}
-      max={Margin.max}
-      labelScale={Margin.scale}
+      step={MARGIN.step}
+      min={MARGIN.min}
+      max={MARGIN.max}
+      labelScale={MARGIN.scale}
       marks={marks}
       onChange={props.onChange}
     />

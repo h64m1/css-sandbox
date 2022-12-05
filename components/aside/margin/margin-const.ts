@@ -1,4 +1,4 @@
-export const Margin = {
+export const MARGIN = {
   scale: 1,
   step: 1,
   min: 0,
