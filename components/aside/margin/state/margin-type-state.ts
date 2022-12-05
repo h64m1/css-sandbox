@@ -1,4 +1,7 @@
-import { getMarginType, MarginType } from 'components/const/marginType';
+import {
+  getMarginType,
+  MarginType,
+} from 'components/aside/margin/state/marginType';
 import { atom, useRecoilValue, useSetRecoilState } from 'recoil';
 
 type MarginTypeState = {

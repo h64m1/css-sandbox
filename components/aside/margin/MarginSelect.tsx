@@ -1,4 +1,4 @@
-import { MarginType } from 'components/const/marginType';
+import { MarginType } from 'components/aside/margin/state/marginType';
 import { Select } from 'components/parts/Select';
 import {
   useMarginTypeMutators,

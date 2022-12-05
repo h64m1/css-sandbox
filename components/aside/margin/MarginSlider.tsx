@@ -1,5 +1,5 @@
 import { getMarks } from 'components/aside/Mark';
-import { Margin } from 'components/const/margin';
+import { Margin } from 'components/aside/margin/margin';
 import { Slider } from 'components/parts/Slider';
 
 interface Props {

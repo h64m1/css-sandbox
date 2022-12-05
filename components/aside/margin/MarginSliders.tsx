@@ -9,7 +9,7 @@ import {
   MarginVerticalSlider,
 } from 'components/aside/margin/MarginEachSlider';
 import { useMarginTypeState } from 'components/aside/margin/state/margin-type-state';
-import { MarginType } from 'components/const/marginType';
+import { MarginType } from 'components/aside/margin/state/marginType';
 
 export const MarginSliders = () => {
   const { marginType } = useMarginTypeState();
