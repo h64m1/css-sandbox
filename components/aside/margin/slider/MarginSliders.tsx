@@ -1,4 +1,3 @@
-import { Space } from '@mantine/core';
 import { MarginAllSlider } from 'components/aside/margin/slider/MarginAllSlider';
 import {
   MarginBottomSlider,
@@ -10,6 +9,7 @@ import {
 } from 'components/aside/margin/slider/MarginEachSlider';
 import { useMarginTypeState } from 'components/aside/margin/state/margin-type-state';
 import { MarginType } from 'components/aside/margin/state/marginType';
+import { SpaceLarge } from 'components/parts/space/Space';
 
 export const MarginSliders = () => {
   const { marginType } = useMarginTypeState();
@@ -22,7 +22,7 @@ export const MarginSliders = () => {
         <>
           <MarginVerticalSlider />
 
-          <Space h="lg" />
+          <SpaceLarge />
 
           <MarginHorizontalSlider />
         </>
@@ -30,11 +30,11 @@ export const MarginSliders = () => {
         <>
           <MarginTopSlider />
 
-          <Space h="lg" />
+          <SpaceLarge />
 
           <MarginHorizontalSlider />
 
-          <Space h="lg" />
+          <SpaceLarge />
 
           <MarginBottomSlider />
         </>
@@ -42,15 +42,15 @@ export const MarginSliders = () => {
         <>
           <MarginTopSlider />
 
-          <Space h="lg" />
+          <SpaceLarge />
 
           <MarginRightSlider />
 
-          <Space h="lg" />
+          <SpaceLarge />
 
           <MarginBottomSlider />
 
-          <Space h="lg" />
+          <SpaceLarge />
 
           <MarginLeftSlider />
         </>
