@@ -1,9 +1,10 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": [
-    "unused-imports",
-    "no-relative-import-paths"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@next/next/recommended",
+    "prettier"
   ],
+  "plugins": ["unused-imports", "no-relative-import-paths"],
   "rules": {
     "unused-imports/no-unused-imports": "error",
     "no-relative-import-paths/no-relative-import-paths": "error"
